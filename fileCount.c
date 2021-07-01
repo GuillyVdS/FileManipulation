@@ -1,5 +1,6 @@
 #include "stdio.h"
 #include "stdlib.h"
+#include "string.h"
 
 //this program will read a single line in a text file.
 int main(int argc, char *argv[]){
@@ -32,6 +33,9 @@ int main(int argc, char *argv[]){
     if(character == '\n')
     {counter += 1; }
   }
+  //find out size of file and print amount of bytes
+  fseek(fileToRead, 0L , SEEK_END);
+  printf("This file has a size of %ld bytes", ftell(fileToRead));
   /*
   scanf(fileToRead, "%[^\n]", fileContent);
   printf("%s \n" , fileContent);
